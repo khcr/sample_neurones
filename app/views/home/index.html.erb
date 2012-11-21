@@ -1,0 +1,33 @@
+<% @title = 'Home' %>
+
+<h1>Home</h1>
+
+<h2>News</h2>
+
+<ul>
+<% @news.each do |new| %>
+<li>
+	<%= new.title %> | 
+	<%= new.content %> | 
+	<%= new.date_expiration %>
+</li>
+<% end %>
+</ul>
+
+<h2>Events</h2>
+
+<ul>
+<% @events.each do |event| %>
+<li>
+	<%= event.title %> | 
+	<%= event.content %> | 
+	<%= event.date_begin %> |
+	<%= event.date_end %> |
+	<%= event.image %>
+</li>
+<% end %>
+</ul>
+
+<h2>Notre vision</h2>
+
+<%= sanitize(@vision.content) %>

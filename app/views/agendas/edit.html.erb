@@ -1,0 +1,11 @@
+<% @title = 'Agenda | edit' %>
+
+<h1>Edit an event</h1>
+
+<%= form_for(@agenda) do |f| %>
+
+	<%= render 'fields', f: f %>
+
+	<%= f.submit "Edit" %>
+
+<% end %>

@@ -1,0 +1,23 @@
+<% @title = 'Agenda' %>
+
+<h1>Events</h1>
+
+<% if signed_in? %>
+	<%= link_to "Add an event", new_agenda_path %>
+<% end %>
+
+<ul>
+<% @events.each do |event| %>
+<li>
+	<%= event.title %> | 
+	<%= event.content %> | 
+	<%= event.date_begin %> |
+	<%= event.date_end %> |
+	<%= event.image %> |
+	<% if signed_in? %>
+		<%= link_to "delete", agenda_path(event), method: :delete, confirm: "Are you sure ?" %> |
+		<%= link_to "modifiy", edit_agenda_path(event) %>
+	<% end %>
+</li>
+<% end %>
+</ul>

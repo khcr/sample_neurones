@@ -1,0 +1,11 @@
+<% @title = 'News | new' %>
+
+<h1>Add a new</h1>
+
+<%= form_for(@new, :html => { multipart: true }) do |f| %>
+
+	<%= render 'fields', f: f %>
+
+	<%= f.submit "Add" %>
+
+<% end %>

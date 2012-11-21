@@ -13,3 +13,9 @@
 # ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+ActiveSupport::Inflector.inflections do |inflect|
+  inflect.irregular 'new', 'news'
+  inflect.irregular 'agenda', 'agendas'
+  inflect.irregular 'page', 'pages'
+end

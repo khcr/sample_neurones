@@ -1,0 +1,10 @@
+<% @title = 'A propos' %>
+
+<h1>Lorem ipsum</h1>
+
+<h2>Notre vision</h2> 
+<% if signed_in? %>
+	<%= link_to "Edit", edit_page_path(@vision) %> 
+<% end %>
+
+<p><%= sanitize(@vision.content) %></p>

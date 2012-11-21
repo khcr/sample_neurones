@@ -1,0 +1,19 @@
+<% @title = 'Users' %>
+
+<h1>Users</h1>
+
+<p>
+<%= link_to "Add an user", new_user_path %>
+</p>
+
+<ul>
+<% @users.each do |user| %>
+	<li>
+		<%= user.name %>
+
+		<% if !current_user?(user) %>
+			<%= link_to "delete", user_path(user), method: :delete, confirm: "Are you sure ?" %>
+		<% end %>
+	</li>
+<% end %>
+</ul>

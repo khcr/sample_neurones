@@ -1,0 +1,10 @@
+<% @title = "News | edit" %>
+
+<h1>Edit a new</h1>
+
+<%= form_for(@new) do |f| %>
+
+	<%= render 'fields', f: f %>
+
+	<%= f.submit "Modify" %>
+<% end %>

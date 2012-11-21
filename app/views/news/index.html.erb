@@ -1,0 +1,24 @@
+<% @title = 'News' %>
+
+<h1>News</h1>
+
+<% if signed_in? %>
+	<%= link_to "Add a new", new_new_path %>
+<% end %>
+
+<ul>
+<% @news.each do |new| %>
+<li>
+	<%= new.title %> | 
+	<%= new.content %> | 
+	<%= new.date_expiration %> |
+	<% unless new.image.url == "/images/original/missing.png" %>
+		<%= image_tag new.image.url(:thumb) %>
+	<% end %>
+	<% if signed_in? %>
+		<%= link_to "delete", new_path(new), method: :delete, confirm: "Are you sure ?" %> |
+		<%= link_to "modifiy", edit_new_path(new) %>
+	<% end %>
+</li>
+<% end %>
+</ul>
