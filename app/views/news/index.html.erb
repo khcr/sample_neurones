@@ -12,7 +12,9 @@
 	<%= new.title %> | 
 	<%= new.content %> | 
 	<%= new.date_expiration %> |
-	<%= image_tag new.avatar.url %>
+	<% if new.avatar? %>
+		<%= image_tag new.avatar.url %>
+	<% end %>
 	<% if signed_in? %>
 		<%= link_to "delete", new_path(new), method: :delete, confirm: "Are you sure ?" %> |
 		<%= link_to "modifiy", edit_new_path(new) %>

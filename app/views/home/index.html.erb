@@ -2,32 +2,43 @@
 
 <h1>Home</h1>
 
-<h2>News</h2>
-
-<ul>
-<% @news.each do |new| %>
-<li>
-	<%= new.title %> | 
-	<%= new.content %> | 
-	<%= new.date_expiration %>
-</li>
-<% end %>
-</ul>
-
-<h2>Events</h2>
-
-<ul>
-<% @events.each do |event| %>
-<li>
-	<%= event.title %> | 
-	<%= event.content %> | 
-	<%= event.date_begin %> |
-	<%= event.date_end %> |
-	<%= event.image %>
-</li>
-<% end %>
-</ul>
-
 <h2>Notre vision</h2>
 
 <%= sanitize(@vision.content) %>
+
+<table id="table_index">
+	<th><h2>News</h2></th>
+	<th><h2>Events</h2></th>
+
+	<tr>
+		<td>
+			<% @news.each do |new| %>
+				<div id="news">
+				<h4><%= new.title %></h4> 
+				<%= new.content %><br /> 
+				<span class="discret_date">Expire le <%= new.date_expiration %></span>
+				</div>
+			<% end %>
+		</td>
+		<td>
+			<% @events.each do |event| %>
+				<div id="event">
+				<h4><%= event.title %></h4>
+				<%= event.content %><br />
+				<span class="discret_date">Commence le <%= event.date_begin %>, fini le <%= event.date_end %></span><br />
+				<%= event.image %>
+				</div>
+			<% end %>
+		</td>
+	</tr>
+
+</table>
+
+
+
+
+
+
+
+
+
