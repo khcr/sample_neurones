@@ -3,19 +3,20 @@ SampleNeurones::Application.routes.draw do
   match '/login', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
 
-  match '/agenda', to: 'agendas#index'
-
   match '/presentation', to: 'pages#presentation'
 
   match '/home', to: 'home#index'
 
   resources :news
-  resources :agendas, path: 'events'
+  resources :agendas
   resources :pages, except: :index
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, path: 'admins'
+  resources :groups
 
   root to: 'home#index'
+
+  match '/:name' => 'groups#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
