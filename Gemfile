@@ -7,6 +7,7 @@ gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'carrierwave'
+gem 'rmagick'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -30,9 +31,11 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '1.2.3'
+  gem 'jquery-fileupload-rails'
+  gem 'fancybox2-rails'
 end
 
-gem 'jquery-rails', '2.0.2'
+gem 'jquery-rails'
 
 group :production do
   gem 'pg'

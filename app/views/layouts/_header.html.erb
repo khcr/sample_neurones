@@ -3,6 +3,7 @@
 	<%= link_to 'News', news_path %>
 	<%= link_to 'Agenda', agendas_path %>
 	<%= link_to 'Groups', groups_path %>
+	<%= link_to 'Galleries', galleries_path %>
 	<%= link_to 'A propos', presentation_path %> | 
 	<% if signed_in? %>
 		<%= link_to @current_user.name, edit_user_path(@current_user) %>

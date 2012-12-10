@@ -8,11 +8,15 @@ SampleNeurones::Application.routes.draw do
   match '/home', to: 'home#index'
 
   resources :news
-  resources :agendas
+  resources :agendas, path: 'events'
   resources :pages, except: :index
   resources :sessions, only: [:new, :create, :destroy]
   resources :users, path: 'admins'
   resources :groups
+  resources :galleries do 
+    resources :paintings
+  end
+
 
   root to: 'home#index'
 
