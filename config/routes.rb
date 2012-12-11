@@ -14,7 +14,7 @@ SampleNeurones::Application.routes.draw do
   resources :users, path: 'admins'
   resources :groups
   resources :galleries do 
-    resources :paintings
+    resources :paintings, except: [:index, :show]
   end
 
 

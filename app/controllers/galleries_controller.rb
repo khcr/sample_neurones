@@ -22,6 +22,20 @@ class GalleriesController < ApplicationController
 		end
 	end
 
+	def edit
+		@gallery = Gallery.find(params[:id])
+	end
+
+	def update
+		@gallery = Gallery.find(params[:id])
+		if @gallery.update_attributes(params[:gallery])
+			flash[:success] = 'Gallery edited'
+			redirect_to gallery_path(@gallery)
+		else
+			render 'edit'
+		end
+	end
+
 	def destroy
     @gallery = Gallery.find(params[:id])
     FileUtils.rm_rf("public/uploads/image/image/#{@gallery.id}")   

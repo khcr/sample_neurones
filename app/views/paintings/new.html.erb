@@ -1,3 +1,7 @@
+<% @title = 'Gallery | add' %>
+
+<h1>Add paintings</h1>
+
 <%= form_for(@painting, url: gallery_paintings_path, :html => {:multipart => true}) do |f| %>
 	
 	<%= f.hidden_field :gallery_id %>

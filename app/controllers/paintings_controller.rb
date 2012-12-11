@@ -4,10 +4,6 @@ class PaintingsController < ApplicationController
     @paintings = Painting.all
   end
 
-  def show
-    @painting = Painting.find(params[:id])
-  end
-
   def new
     @painting = Painting.new(:gallery_id => params[:gallery_id])
   end
@@ -19,7 +15,7 @@ class PaintingsController < ApplicationController
   def destroy
     @painting = Painting.find(params[:id])
     @painting.destroy
-    redirect_to paintings_url, notice: "Painting was successfully destroyed."
+    redirect_to paintings_url, notice: "Painting destroyed"
   end
 
 end

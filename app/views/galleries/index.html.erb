@@ -13,9 +13,6 @@
 	<li>
 		<%= link_to gallery.name, gallery %> | 
 		<%= gallery.description %>
-		<% if signed_in? %>
-			| <%= link_to "delete", gallery_path(gallery), method: :delete, confirm: "Are you sure ?" %>
-		<% end %>
 	</li>
 <% end %>
 </ul>

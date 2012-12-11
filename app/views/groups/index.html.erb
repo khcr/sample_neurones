@@ -2,6 +2,10 @@
 
 <h1>Groups</h1>
 
+<% if signed_in? %>
+	<p><%= link_to "Add a group", new_group_path %></p>
+<% end %>
+
 <ul>
 <% @groups.each do |group| %>
 	
